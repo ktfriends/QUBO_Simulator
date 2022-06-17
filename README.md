@@ -1,4 +1,11 @@
-# QUBO simulator for linear system
+# Research Members
+```
+Kyungtaek Jun: ktfriends@gmail.com
+Hyunju Lee: hyunjulee0824@gmail.com
+Yunchang Seol: ycseol@knu.ac.kr
+```
+
+## QUBO simulator for linear system
 ```
 Simulator version Ver 0
 Solving linear system: Ax = b
