@@ -1,8 +1,7 @@
 close all, clear all, clc;
 
-Qubits = 2;
-Matrix_size = 2;
-Selection = 2;   % 1 is random, 2 is manual
+Qubits = 4;
+Selection = 1;   % 1 is random, 2 is manual
 
 % qubits initiallization
 vec_qb = zeros(Qubits,2^Qubits);   
@@ -15,7 +14,8 @@ for qb = 1:2^Qubits-1 %Qubits
     end
 end
 
-if Selection == 1
+if Selection == 2
+    Matrix_size = 4;
     Range = 100;
     Sub_int = 2^Qubits;     % subrange interval
     Sub_num = 30;           % number of subinterval for each x_i
@@ -26,11 +26,12 @@ if Selection == 1
 else
     mat_M = [3, 1 ; -1, 2]
     vec_b = [-1; 5]
+    Matrix_size = max(size(mat_M));
 end
     
 
-T0 = [0; 0];
-vec_c = vec_b - mat_M*T0
+T0 = zeros(Matrix_size,1);
+vec_c = vec_b - mat_M.*T0
 
 QM = zeros(2*Qubits*Matrix_size, 2*Qubits*Matrix_size);
 %%% Linear terms %%%
@@ -101,7 +102,7 @@ for k = 0:2^(2*Qubits*Matrix_size)-1
         po = rem(temp_po, 2^Qubits);
         next_po = (temp_po - po)/2^Qubits;
         temp_po = next_po;
-        T = [T; vec_qb(:,po+1)]; 
+        T = [T; vec_qb(:,po+1)];
     end
     qubo_val = T.'*QM*T;
     if qubo_val < Annealing
