@@ -16,5 +16,5 @@ Will be update: xi = q1 + 2q2+ 4q3 + --- + 2^(n-1)qn - 2^nq(n+1)
 ```
 
 ### Related paper
-QUBO model 1: [https://drive.google.com/file/d/1C-gYvVPPkBEwHuoi8zqwI9628wfpDi1T/view], (https://arxiv.org/abs/2106.10819)
-Subrange algorithm: (https://drive.google.com/file/d/1XJSeDtf0_AyJ86JV-aQSbxOwf5ukaGCD/view), (https://arxiv.org/abs/2202.07692)
+1. QUBO model 1: [https://drive.google.com/file/d/1C-gYvVPPkBEwHuoi8zqwI9628wfpDi1T/view], (https://arxiv.org/abs/2106.10819)
+2. Subrange algorithm: (https://drive.google.com/file/d/1XJSeDtf0_AyJ86JV-aQSbxOwf5ukaGCD/view), (https://arxiv.org/abs/2202.07692)
