@@ -7,7 +7,7 @@ Yunchang Seol: ycseol@knu.ac.kr
 
 ## QUBO model 1 simulator for linear system
 ```
-QUBO model 1: (https://drive.google.com/file/d/1C-gYvVPPkBEwHuoi8zqwI9628wfpDi1T/view), (https://arxiv.org/abs/2106.10819)
+QUBO model 1: [https://drive.google.com/file/d/1C-gYvVPPkBEwHuoi8zqwI9628wfpDi1T/view], (https://arxiv.org/abs/2106.10819)
 Subrange algorithm: (https://drive.google.com/file/d/1XJSeDtf0_AyJ86JV-aQSbxOwf5ukaGCD/view), (https://arxiv.org/abs/2202.07692)
 QUBO model 1 simulator version Ver 0
 Solving linear system: Ax = b
