@@ -1,7 +1,7 @@
 close all, clear all, clc;
 
-Qubits = 4;
-Selection = 1;   % 1 is random, 2 is manual
+Qubits = 2;
+Selection = 2;   % 1 is random, 2 is manual
 
 % qubits initiallization
 vec_qb = zeros(Qubits,2^Qubits);   
@@ -19,19 +19,20 @@ if Selection == 1
     Range = 100;
     Sub_int = 2^Qubits;     % subrange interval
     Sub_num = 30;           % number of subinterval for each x_i
-    Max_Iter = 1000;         % Maximum iteration
     mat_M = Range*rand(Matrix_size)-Range/2;                            % A in Ax = b
     vec_x = Sub_int*Sub_num*rand(Matrix_size,1) - Sub_int*Sub_num/2;    % x
     vec_b = mat_M*vec_x;
 else
-    mat_M = [3, 1 ; -1, 2]
-    vec_b = [-1; 5]
+    mat_M = [3, 1 ; -1, 2];
+    vec_b = [-1; 5];
     Matrix_size = max(size(mat_M));
 end
-    
+
+Matrix = mat_M
+Vector_b = vec_b
 
 T0 = zeros(Matrix_size,1);
-vec_c = vec_b - mat_M*T0
+vec_c = vec_b - mat_M*T0;
 
 QM = zeros(2*Qubits*Matrix_size, 2*Qubits*Matrix_size);
 %%% Linear terms %%%
@@ -91,7 +92,8 @@ for k = 1:Matrix_size
 end
 
 %QM
-Abs_Min = -dot(vec_c, vec_c)
+Abs_Min = -dot(vec_c, vec_c);
+fprintf('Absolute minimum value from vector product -(b*)*(b) = %f\n\n', Abs_Min)
 Annealing = 0;
 vec_Anl = [];
   
@@ -110,9 +112,10 @@ for k = 0:2^(2*Qubits*Matrix_size)-1
         vec_Anl = T;
     end
 end
-
-Annealing
-vec_Anl
+fprintf('Absolute minimum value from annealing = %f\n\n', Annealing)
+fprintf('Vector for absolute minimum value = \n')
+fprintf('q1 q2 q3 q4 q5 q6 q7 q8 ---\n')
+fprintf('%d  ', vec_Anl)
 sol_x = zeros(Matrix_size,1);
 for k = 1:Matrix_size
     for i = 1:Qubits
@@ -120,6 +123,11 @@ for k = 1:Matrix_size
         sol_x(k) = sol_x(k) - vec_Anl((k-1)*2*Qubits+i+Qubits)*2^(i-1);
     end
 end
-sol_x
-Ax_b = mat_M*sol_x - vec_b
+fprintf('\n\nConverted vector from annealing = \n')
+fprintf('%f  ', sol_x)
+
+Ax_b = mat_M*sol_x - vec_b;
+fprintf('\n\nAx - b = \n')
+fprintf('%f  ', Ax_b)
+fprintf('\n')
 
