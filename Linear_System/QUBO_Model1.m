@@ -14,7 +14,7 @@ for qb = 1:2^Qubits-1 %Qubits
     end
 end
 
-if Selection == 2
+if Selection == 1
     Matrix_size = 4;
     Range = 100;
     Sub_int = 2^Qubits;     % subrange interval
