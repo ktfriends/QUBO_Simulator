@@ -1,3 +1,7 @@
+% Copyright 2022 Jun's research group
+% Licensed under the MIT License
+% https://www.mit.edu/~amini/LICENSE.md
+
 close all, clear all, clc;
 
 Qubits = 2;
