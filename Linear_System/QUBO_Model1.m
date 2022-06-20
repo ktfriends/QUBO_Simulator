@@ -31,7 +31,7 @@ end
     
 
 T0 = zeros(Matrix_size,1);
-vec_c = vec_b - mat_M.*T0
+vec_c = vec_b - mat_M*T0
 
 QM = zeros(2*Qubits*Matrix_size, 2*Qubits*Matrix_size);
 %%% Linear terms %%%
