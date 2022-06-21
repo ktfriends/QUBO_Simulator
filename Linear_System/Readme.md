@@ -10,8 +10,8 @@ Matrix_size: dimension of the square matrix & size of vectors
 ## Qubit variables for xi
 ```
 vector x = (x1, x2, ---, xn)
-x1 = q1 + 2q2+ 4q3 + --- + 2^(n-1)qn - q(n+1) - 2q(n+2) - 4q(n+3) + --- + 2^(n-1)q2n
-Qubits: n in xi
+x1 = q1 + 2q2+ 4q3 + --- + 2^(m-1)qm - q(m+1) - 2q(m+2) - 4q(m+3) + --- + 2^(m-1)q2m
+Qubits: 2m in xi
 ```
 
 ## QUBO matrix
